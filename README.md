@@ -1,4 +1,4 @@
-# AvoidCollegeTrap
+# Hush
 
 -Create your own branch for feature development
 
