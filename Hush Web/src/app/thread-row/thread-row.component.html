@@ -1,16 +1,10 @@
-<div>
-  thread-row works!
+<div class="d-flex w-100 justify-content-between">
+  <h5 class="mb-1">{{thread.owner}}</h5>
+  <small>{{thread.postedTime}}</small>
 </div>
-<div>
-  {{thread.owner}}
+<p class="mb-1">{{thread.text}}</p>
+<div class="d-flex w-100 justify-content-end">
+  <button type="button" class="btn btn-outline-success" (click)="like()">Like {{thread.numberOfLike}}</button>
 </div>
-<div>
-  {{thread.text}}
-</div>
-<div>
-  {{thread.numberOfLike}}
-</div>
-<div>
-  {{thread.isLiked}}
-</div>
-<br>
+
+
