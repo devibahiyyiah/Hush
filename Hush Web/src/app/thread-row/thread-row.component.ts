@@ -4,6 +4,7 @@ import { PostComponent } from '../post/post.component';
 @Component({
   selector: 'app-thread-row',
   inputs: ['thread'],
+  host: {class: 'list-group-item list-group-item-action flex-column align-items-start'},
   templateUrl: './thread-row.component.html',
   styleUrls: ['./thread-row.component.css']
 })

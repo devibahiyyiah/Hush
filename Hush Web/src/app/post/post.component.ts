@@ -10,6 +10,7 @@ export class PostComponent implements OnInit {
   constructor(
   	public owner: string,
   	public text: string,
+    public postedTime: string,
   	public numberOfLike: number,
   	public isLiked: boolean
   ) { }
