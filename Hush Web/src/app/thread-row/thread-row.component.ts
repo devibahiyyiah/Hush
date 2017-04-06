@@ -13,6 +13,9 @@ export class ThreadRowComponent implements OnInit {
 
   constructor() { }
 
+  like(): void {
+    this.thread.like();
+  }  
   ngOnInit() {
   }
 

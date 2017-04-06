@@ -15,6 +15,14 @@ export class PostComponent implements OnInit {
   	public isLiked: boolean
   ) { }
 
+  like(): void {
+    if (!this.isLiked){
+      this.numberOfLike += 1;
+      this.isLiked = true;
+    }
+  }  
+
+
   ngOnInit() {
   }
 }

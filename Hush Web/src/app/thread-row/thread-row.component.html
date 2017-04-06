@@ -3,5 +3,8 @@
   <small>{{thread.postedTime}}</small>
 </div>
 <p class="mb-1">{{thread.text}}</p>
-<small>{{thread.numberOfLike}}</small>
+<div class="d-flex w-100 justify-content-end">
+  <button type="button" class="btn btn-outline-success" (click)="like()">Like {{thread.numberOfLike}}</button>
+</div>
+
 
