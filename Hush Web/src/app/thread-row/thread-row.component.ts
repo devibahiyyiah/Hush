@@ -9,14 +9,46 @@ import { PostComponent } from '../post/post.component';
   styleUrls: ['./thread-row.component.css']
 })
 export class ThreadRowComponent implements OnInit {
-  thread: PostComponent;
+  thread: PostComponent
+  likeButton: string
+  textDisplayed: string
+  expanded: boolean
 
-  constructor() { }
+  constructor() {
+    this.likeButton = "+";
+    this.expanded = false;
+  }
 
   like(): void {
-    this.thread.like();
-  }  
+    if (!this.thread.isLiked) {
+      this.thread.like();
+    }
+    else
+      this.thread.dislike();
+  }
+
+  showDislike(): void {
+    if (this.thread.isLiked)
+      this.likeButton = "-";
+  }
+
+  hideDislike(): void {
+    this.likeButton = "+";
+  }
+
+  expand(): void{
+    if (!this.expanded) {
+      this.expanded = true;
+      this.textDisplayed = this.thread.text;
+    }
+    else{
+      this.expanded = false;
+      this.textDisplayed = this.thread.textSummary;
+    }
+  }
+
   ngOnInit() {
+    this.textDisplayed = this.thread.textSummary;
   }
 
 }
