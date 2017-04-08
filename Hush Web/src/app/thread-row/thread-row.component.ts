@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 import { PostComponent } from '../post/post.component';
 
 @Component({
@@ -9,6 +9,10 @@ import { PostComponent } from '../post/post.component';
   styleUrls: ['./thread-row.component.css']
 })
 export class ThreadRowComponent implements OnInit {
+  @HostListener('click') onClick() {
+    this.expand();
+  }
+
   thread: PostComponent
   likeButton: string
   textDisplayed: string
