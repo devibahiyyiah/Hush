@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  textSummary: string
+  maximalTextDisplay: number
 
   constructor(
   	public owner: string,
@@ -13,15 +15,22 @@ export class PostComponent implements OnInit {
     public postedTime: string,
   	public numberOfLike: number,
   	public isLiked: boolean
-  ) { }
+  ) {
+    this.maximalTextDisplay = 100;
+    this.textSummary = this.text.slice(0, this.maximalTextDisplay);
+    if (this.text.length > this.maximalTextDisplay)
+      this.textSummary = this.textSummary + " ..."
+  }
 
   like(): void {
-    if (!this.isLiked){
-      this.numberOfLike += 1;
-      this.isLiked = true;
-    }
-  }  
+    this.numberOfLike += 1;
+    this.isLiked = true;
+  }
 
+  dislike(): void {
+    this.numberOfLike -= 1;
+    this.isLiked = false;
+  }  
 
   ngOnInit() {
   }

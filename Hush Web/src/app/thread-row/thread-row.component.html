@@ -2,9 +2,9 @@
   <h5 class="mb-1">{{thread.owner}}</h5>
   <small>{{thread.postedTime}}</small>
 </div>
-<p class="mb-1">{{thread.text}}</p>
+<p class="mb-1">{{textDisplayed}}</p>
 <div class="d-flex w-100 justify-content-end">
-  <button type="button" class="btn btn-outline-success" (click)="like()">Like {{thread.numberOfLike}}</button>
+  <button type="button" class="btn btn-outline-success btn-sm"  [ngClass]="{active: thread.isLiked}" (click)="like()" (mouseover)="showDislike()" (mouseleave)="hideDislike()"> {{likeButton}} {{thread.numberOfLike}} </button>
 </div>
 
 
