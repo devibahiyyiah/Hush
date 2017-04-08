@@ -4,7 +4,7 @@
 </div>
 <p class="mb-1">{{textDisplayed}}</p>
 <div class="d-flex w-100 justify-content-end">
-  <button type="button" class="btn btn-outline-success btn-sm"  [ngClass]="{active: thread.isLiked}" (click)="like()" (mouseover)="showDislike()" (mouseleave)="hideDislike()"> {{likeButton}} {{thread.numberOfLike}} </button>
+  <button type="button" class="btn btn-outline-success btn-sm"  [ngClass]="{active: thread.isLiked}" (click)="like(); $event.stopPropagation()" (mouseover)="showDislike()" (mouseleave)="hideDislike()"> {{likeButton}} {{thread.numberOfLike}} </button>
 </div>
 
 
